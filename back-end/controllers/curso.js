@@ -27,7 +27,7 @@ controller.novo = async (req, res) => {
         // HTTP 201: Created
         res.status(201).end()
     }
-    catch(erro) {
+    catch (erro) {
         console.error(erro)
         // HTTP 500: Internal Server Error
         res.status(500).send(erro)
@@ -40,18 +40,53 @@ controller.listar = async (req, res) => {
         let dados = await Curso.find()
         res.send(dados)// Vai com status HTTP 200: OK
     }
-    catch(erro) {
+    catch (erro) {
         console.error(erro)
         res.status(500).send(erro)
     }
 }
 // Metodo obterUm(), implementando a operação   RETRIEVE (ONE)
-controller.obterUm = (req,res) => {
+controller.obterUm = (req, res) => {
     const id = req.params.id // Capturando o parametro id
     let obj = Curso.findById(id)
     // Se o objeto vier preenchido(achou), então o retornamos  
-    if(obj) res.send(obj)
+    if (obj) res.send(obj)
     // Senão (objeto vazio), enviamos o status HTTP 404: NOT FOUND
     else res.status(404).end()
+}
+//Metodo atualizar(), implementando a operação UPDATE
+controller.atualizar = async = (req, res) => {
+    try {
+        //Isolar o _id do objeto para fins de busca
+        const id = req.body._id
+        //Busca o ojjeto pela Id e, encontrando-a,substui o conteudo por req.body
+        let obj = await Curso.findByIdAndUpdate(id, req.body)
+        // Se encontrou e substituiu, retornamos HTTP 204; NO CONTENT    
+        if (obj) res.status(204).end()
+        // Caso contrario, retorna HTTP 404: HOT FOUND
+        else res.status(404).end()
     }
+    catch (erro) {
+        console.erro(erro)
+        res.status(500).end()
+    }
+}
+
+// Metodo excluir(), implementando a opração  DELETE  
+controller.excluir = async (req,res) => {
+    try{
+    //Isolando o id pars exclusão
+    const id = req.body.id
+    let ojb = await Curso.getByIdAndDelete(id)
+    //Encontrou e excluiu
+    if(obj) res.status(204).end()
+    //Objeto não foi encontrado para exclusão
+    else res.status(404).end()
+    }
+    catch(erro){
+      console.erro(erro)
+      res.status(500).send(erro)  
+    }
+}
+
 module.exports = controller
