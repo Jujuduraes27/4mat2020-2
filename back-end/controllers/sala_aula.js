@@ -17,7 +17,7 @@
     DELETE      Delete
 */
 // Importar o model para dentro do controller
-const Curso = require('../models/Curso')
+const Curso = require('../models/sala_aula')
 const controller = {}       // Objeto vazio
 // Método novo(), implementando a operação CREATE
 controller.novo = async (req, res) => {
