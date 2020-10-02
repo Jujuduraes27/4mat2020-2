@@ -17,13 +17,13 @@
     DELETE      Delete
 */
 // Importar o model para dentro do controller
-const Curso = require('../models/Curso')
+const Funcionario = require('../models/Funcionario')
 const controller = {}       // Objeto vazio
 // Método novo(), implementando a operação CREATE
 controller.novo = async (req, res) => {
     try {
         // Envia os dados dentro de req.body para o BD para criação
-        await Curso.create(req.body)
+        await Funcionario.create(req.body)
         // HTTP 201: Created
         res.status(201).end()
     }
@@ -37,10 +37,7 @@ controller.novo = async (req, res) => {
 controller.listar = async (req, res) => {
     try {
         // find() sem parâmetros é para trazer tudo
-        let dados = await Curso.find()
-        .populate('curso') // Dados Completos
-        .populate('professor', 'nome email') //Só nome e mail
-        .populate('sala_aula') // Dados Completos
+        let dados = await Funcionario.find()
         res.send(dados)// Vai com status HTTP 200: OK
     }
     catch (erro) {
@@ -51,7 +48,7 @@ controller.listar = async (req, res) => {
 // Metodo obterUm(), implementando a operação   RETRIEVE (ONE)
 controller.obterUm = async (req, res) => {
     const id = req.params.id // Capturando o parametro id
-    let obj = await Curso.findById(id)
+    let obj = await Funcionario.findById(id)
     // Se o objeto vier preenchido(achou), então o retornamos  
     if (obj) res.send(obj)
     // Senão (objeto vazio), enviamos o status HTTP 404: NOT FOUND
@@ -63,7 +60,7 @@ controller.atualizar = async  (req, res) => {
         //Isolar o _id do objeto para fins de busca
         const id = req.body._id
         //Busca o ojjeto pela Id e, encontrando-a,substui o conteudo por req.body
-        let obj = await Curso.findByIdAndUpdate(id, req.body)
+        let obj = await Funcionario.findByIdAndUpdate(id, req.body)
         // Se encontrou e substituiu, retornamos HTTP 204; NO CONTENT    
         if (obj) res.status(204).end()
         // Caso contrario, retorna HTTP 404: HOT FOUND
@@ -80,7 +77,7 @@ controller.excluir = async (req,res) => {
     try{
     //Isolando o id pars exclusão
     const id = req.body.id
-    let ojb = await Curso.getByIdAndDelete(id)
+    let ojb = await Funcionario.getByIdAndDelete(id)
     //Encontrou e excluiu
     if(obj) res.status(204).end()
     //Objeto não foi encontrado para exclusão
