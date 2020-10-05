@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 const esquema = mongoose.Schema({
     
-    pedido:{type: String,required: true},
+    
     valor:{type:Number, required:true}, 
     
     cliente:{type: mongoose.ObjectId, ref:'Cliente',required:true},
