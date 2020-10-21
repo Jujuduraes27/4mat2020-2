@@ -38,6 +38,10 @@ controller.listar = async (req, res) => {
     try {
         // find() sem parâmetros é para trazer tudo
         let dados = await Pedido.find()
+            .populate('cliente')
+            .populate('produto')
+            .populate('entregador')
+            .populate('funcionario')
         res.send(dados)// Vai com status HTTP 200: OK
     }
     catch (erro) {
@@ -67,7 +71,7 @@ controller.atualizar = async  (req, res) => {
         else res.status(404).end()
     }
     catch (erro) {
-        console.erro(erro)
+        console.error(erro)
         res.status(500).end()
     }
 }
@@ -76,15 +80,15 @@ controller.atualizar = async  (req, res) => {
 controller.excluir = async (req,res) => {
     try{
     //Isolando o id pars exclusão
-    const id = req.body.id
-    let ojb = await Pedido.getByIdAndDelete(id)
+    const id = req.body._id
+    let obj = await Pedido.findByIdAndDelete(id)
     //Encontrou e excluiu
     if(obj) res.status(204).end()
     //Objeto não foi encontrado para exclusão
     else res.status(404).end()
     }
     catch(erro){
-      console.erro(erro)
+      console.error(erro)
       res.status(500).send(erro)  
     }
 }
