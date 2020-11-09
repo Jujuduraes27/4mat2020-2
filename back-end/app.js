@@ -13,6 +13,9 @@ const dbName = process.env.DB_NAME
 db(`mongodb+srv://${dbUser}:${dbPass}@cluster0.mm1tc.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`)
 var app = express();
 
+const cors = require('cors');
+app.use(cors());
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttoCliente } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
@@ -9,8 +10,8 @@ export class CursoService {
 
   constructor(private http : HttpClient) {}
 
-  listar(){
-      this.http.get(this.server + 'curso').toPromise()
+   listar(){
+      return this.http.get(this.server + 'curso').toPromise()
     }
   
 }
