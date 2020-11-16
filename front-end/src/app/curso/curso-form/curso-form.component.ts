@@ -5,11 +5,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './curso-form.component.html',
   styleUrls: ['./curso-form.component.scss']
 })
-export class CursoFormComponent implements OnInit {
+export class CursoFormComponent implements OnInit {    
+    title: string = 'Novo Curso'
+
+    curso:  any = {} // Objeto vazio, nome da entidade no SINGULAR
+    niveis: any = [
+        {valor:'Básico',descr: 'Básico'},
+        {valor:'Intermediário',descr: 'Intermediário'},
+        {valor:'Avançado',descr: 'Avançado'}
+    ]
+    
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  salvar(form){
+      
   }
 
 }
