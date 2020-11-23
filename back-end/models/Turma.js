@@ -13,7 +13,7 @@ const esquema = mongoose.Schema({
     horario_final:{type: String, required: true},
     curso:{type: mongoose.ObjectId, ref:'Curso',required:true},
     professor:{type: mongoose.ObjectId, ref:'Professor',required:true},
-    sala_aula:{type: mongoose.ObjectId, ref:'SalaAular',required:true},
+    sala_aula:{type: mongoose.ObjectId, ref:'SalaAula',required:true},
     
 })
 // PARÂMETROS DO mongoose.model()

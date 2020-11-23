@@ -13,6 +13,7 @@ import { CursoListComponent } from './curso/curso-list/curso-list.component';
 import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 
 const routes: Routes = [
     //Rotas na Angular NUNCA comecam com /
@@ -28,7 +29,8 @@ const routes: Routes = [
     MainMenuComponent,
     MainFooterComponent,
     CursoListComponent,
-    CursoFormComponent
+    CursoFormComponent,
+    TurmaListComponent
   ],
   imports: [
     BrowserModule,
