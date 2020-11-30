@@ -1,3 +1,7 @@
+// Bem no início do arquivo app.module.ts
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -49,7 +53,8 @@ const routes: Routes = [
     MaterialModule,
     HttpClientModule,
     FormsModule,
-    MatMomentDateModule
+    MatMomentDateModule,
+    NgxMaskModule.forRoot()
 
   ],
   providers: [

@@ -29,9 +29,10 @@ export class TurmaFormComponent implements OnInit {
     ]
     
     // Variaveis para armazenar as listagems das entidades relacionadas
-    curso: any = [] // Nome no plural, vetor vazio
-    professor: any = []
-    salaAula: any = []
+    cursos: any = [] // Nome no plural, vetor vazio
+    professores: any = []
+    salasAula: any = []
+
 
   constructor(
       private turmaSrv : TurmaService,
@@ -60,9 +61,9 @@ export class TurmaFormComponent implements OnInit {
 
         // carregar as listagens das entidades relacionadas
         try{
-            this.curso = await this.cursoSrv.listar()
-            this.professor = await this.professorSrv.listar()
-            this.salaAula = await this.salaAulaSrv.listar()
+            this.cursos = await this.cursoSrv.listar()
+            this.professores = await this.professorSrv.listar()
+            this.salasAula = await this.salaAulaSrv.listar()
         }
         catch(erro){
                 console.log(erro)
