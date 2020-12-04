@@ -10,9 +10,17 @@
 
 <mat-form-field> 
 <mat-label>Nome do Entregador</mat-label>
-<input name="nome" [(ngModel)]="entregador.nome" matInput required
+<input name="nome" [(ngModel)]="pedido.nome_entregador" matInput required
     placeholder="Informe o nome do entregador">
 </mat-form-field>
+
+<mat-form-field> 
+<mat-label>Nome do Cliente</mat-label>
+<input name="nome" [(ngModel)]="pedido.nome" matInput required
+    placeholder="Informe o nome do cliente">
+</mat-form-field>
+
+
 
 <mat-form-field appearance="fill">
     <mat-label>Nível</mat-label>

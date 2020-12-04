@@ -1,3 +1,6 @@
+import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
+import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
+import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
 // Bem no início do arquivo app.module.ts
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -27,18 +30,14 @@ import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
-import { FuncionarioListComponent } from './funcionario/funcionario-list/funcionario-list.component';
-import { EntregadorListComponent } from './entregador/entregador-list/entregador-list.component';
-import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
-import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
-import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
 
 const routes: Routes = [
     //Rotas na Angular NUNCA comecam com /
-    {path: 'curso', component: CursoListComponent},
-    {path: 'curso/novo', component: CursoFormComponent},
-    {path: 'curso/id', component: CursoFormComponent},
-];
+    
+    {path: 'entregador/:id', component: EntregadorFormComponent},
+    {path: 'funcionario/:id', component: FuncionarioFormComponent},
+    {path: 'pedido/novo', component: PedidoFormComponent},
+    
 
 @NgModule({
   declarations: [
@@ -50,11 +49,9 @@ const routes: Routes = [
     CursoFormComponent,
     TurmaListComponent,
     TurmaFormComponent,
-    FuncionarioListComponent,
-    EntregadorListComponent,
     EntregadorFormComponent,
     FuncionarioFormComponent,
-    PedidoFormComponent
+    PedidoFormComponent,
   ],
   imports: [
     BrowserModule,

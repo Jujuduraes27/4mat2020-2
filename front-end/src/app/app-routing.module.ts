@@ -1,11 +1,10 @@
+import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
+import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
 
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-import { EntregadorFormComponent } from ' ./entregador/entregador-form/entregador-form.component';  
-import { FuncionarioFormComponent } from ' ./funcionario/funcionario-form/funcionario-form.component';
-import { PedidoFormComponent } from ' ./pedido/pedido-form/pedido-form.component';
 import { from } from 'rxjs';
+import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
 
 
     const routes: Routes = [
