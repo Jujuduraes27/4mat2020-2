@@ -24,12 +24,9 @@ import { MainToolbarComponent } from './ui/main-toolbar/main-toolbar.component';
 import { MainMenuComponent } from './ui/main-menu/main-menu.component';
 import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import {​​ HttpClientModule }​​ from '@angular/common/http';
-import { CursoListComponent } from './curso/curso-list/curso-list.component';
-import { CursoFormComponent } from './curso/curso-form/curso-form.component';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { TurmaListComponent } from './turma/turma-list/turma-list.component';
-import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
+
 
 const routes: Routes = [
     //Rotas na Angular NUNCA comecam com /
@@ -39,16 +36,12 @@ const routes: Routes = [
     {path: 'pedido/novo', component: PedidoFormComponent},
     
 
-@NgModule({
+ @NgModule({
   declarations: [
     AppComponent,
     MainToolbarComponent,
     MainMenuComponent,
-    MainFooterComponent,
-    CursoListComponent,
-    CursoFormComponent,
-    TurmaListComponent,
-    TurmaFormComponent,
+    MainFooterComponent,    
     EntregadorFormComponent,
     FuncionarioFormComponent,
     PedidoFormComponent,
