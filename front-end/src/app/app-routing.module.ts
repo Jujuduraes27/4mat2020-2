@@ -1,18 +1,22 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {​​ CursoListComponent }​​ from './curso/curso-list/curso-list.component';
-import { CursoFormComponent } from './curso/curso-form/curso-form.component';
-import { TurmaListComponent } from './turma/turma-list/turma-list.component';
-import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
-const routes: Routes = [
-    // Rotas no Angular NUNCA começam com /
-    { path: 'curso', component: CursoListComponent },
-    { path: 'curso/novo', component: CursoFormComponent},
-    { path: 'curso/:id', component: CursoFormComponent },
 
-    {path: 'turma', component: TurmaListComponent},
-    {path: 'turma/novo', component: TurmaFormComponent},
-    {path: 'turma/:id', component: TurmaFormComponent},
+import { NgModule, Component } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+
+import { EntregadorFormComponent } from ' ./entregador/entregador-form/entregador-form.component';  
+import { FuncionarioFormComponent } from ' ./funcionario/funcionario-form/funcionario-form.component';
+import { PedidoFormComponent } from ' ./pedido/pedido-form/pedido-form.component';
+import { from } from 'rxjs';
+
+
+    const routes: Routes = [
+  // Pode haver outras rotas antes
+  {path: 'entregador/:id',component: EntregadorFormComponent},    
+  {path: 'funcionario/:id',component: FuncionarioFormComponent},
+  {path: 'pedido/novo',component: PedidoFormComponent},
+
+
+  // Pode haver outras rotas depois
+
 
 ];
 

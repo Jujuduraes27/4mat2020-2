@@ -27,6 +27,11 @@ import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { TurmaListComponent } from './turma/turma-list/turma-list.component';
 import { TurmaFormComponent } from './turma/turma-form/turma-form.component';
+import { FuncionarioListComponent } from './funcionario/funcionario-list/funcionario-list.component';
+import { EntregadorListComponent } from './entregador/entregador-list/entregador-list.component';
+import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
+import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
+import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
 
 const routes: Routes = [
     //Rotas na Angular NUNCA comecam com /
@@ -44,7 +49,12 @@ const routes: Routes = [
     CursoListComponent,
     CursoFormComponent,
     TurmaListComponent,
-    TurmaFormComponent
+    TurmaFormComponent,
+    FuncionarioListComponent,
+    EntregadorListComponent,
+    EntregadorFormComponent,
+    FuncionarioFormComponent,
+    PedidoFormComponent
   ],
   imports: [
     BrowserModule,
