@@ -1,10 +1,10 @@
 import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
-import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
 import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
+import {FuncionarioFormComponent} from './funcionario/funcionario-form/funcionario-form.component';
+
 // Bem no início do arquivo app.module.ts
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
-
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -26,6 +26,7 @@ import { MainFooterComponent } from './ui/main-footer/main-footer.component';
 import {​​ HttpClientModule }​​ from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { from } from 'rxjs';
 
 
 const routes: Routes = [

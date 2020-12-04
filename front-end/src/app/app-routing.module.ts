@@ -1,6 +1,5 @@
 import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
 import { FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
-
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
