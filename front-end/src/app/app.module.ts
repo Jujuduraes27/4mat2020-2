@@ -1,6 +1,7 @@
+
 import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
 import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
-import {FuncionarioFormComponent} from './funcionario/funcionario-form/funcionario-form.component';
+import {FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
 
 // Bem no início do arquivo app.module.ts
 import { NgxMaskModule, IConfig } from 'ngx-mask'
@@ -43,11 +44,11 @@ const routes: Routes = [
     MainToolbarComponent,
     MainMenuComponent,
     MainFooterComponent,    
-    EntregadorFormComponent,
-    FuncionarioFormComponent,
+    EntregadorFormComponent,   
     PedidoFormComponent,
   ],
   imports: [
+    FuncionarioFormComponent,  
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
