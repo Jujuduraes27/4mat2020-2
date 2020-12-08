@@ -14,15 +14,11 @@ export class EntregadorFormComponent implements OnInit {
     title: string = 'Novo Entregador'
 
     entregador:  any = {} // Objeto vazio, nome da entidade no SINGULAR
-    niveis: any = [
-        {valor:'Básico',descr: 'Básico'},
-        {valor:'Intermediário',descr: 'Intermediário'},
-        {valor:'Avançado',descr: 'Avançado'}
-    ]
+    
     
 
   constructor(
-      private cursoSrv : EntregadorService,
+      private entregadorSrv : EntregadorService,
       private snackBar : MatSnackBar,
       private location : Location,
       private actRoute : ActivatedRoute
@@ -33,10 +29,15 @@ export class EntregadorFormComponent implements OnInit {
       if(this.actRoute.snapshot.params['id']){
           try{
               // 1) Trazer o registro do back-end para edição
-              this.entregador = await this.cursoSrv.obterUm(this.actRoute.snapshot.params['id'])
+              this.entregador = await this.entregadorSrv.obterUm(this.actRoute.snapshot.params['id'])
               // 2) Mudar o titulo da pagina
               this.title = 'Editando entregador'
-            }
+              // carregar as listagens das entidades relacionadas
+            
+            this.entregador = await this.entregadorSrv.listar()
+            }          
+                        
+
             catch(erro){
                 console.log(erro)
                 this.snackBar.open('ERRO: NÃO FOI POSSIVEL CARREGAR OS DADOS PARA EDIÇAÕ', 'QUE PENA!!',{duration: 5000})
@@ -51,10 +52,10 @@ export class EntregadorFormComponent implements OnInit {
         if(this.entregador._id){
             //_id existe, esse registro ja foi salvo anteriormente
             // no BD é o caso de atualização
-            await this.cursoSrv.atualizar(this.entregador)            
+            await this.entregadorSrv.atualizar(this.entregador)            
         }
         else{
-            await this.cursoSrv.novo(this.entregador)
+            await this.entregadorSrv.novo(this.entregador)
         }
         //2) Dar um feedback (mensagem) para o usuario
         this.snackBar.open('Dados salvos com sucesso', 'Entendi',
