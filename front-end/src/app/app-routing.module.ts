@@ -4,12 +4,11 @@ import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
-import {FuncionarioFormComponent} from './funcionario/funcionario-form/funcionario-form.component';
+
 
     const routes: Routes = [
   // Pode haver outras rotas antes
-  {path: 'entregador/:id',component: EntregadorFormComponent},    
-  {path: 'funcionario/:id',component: FuncionarioFormComponent},  
+  {path: 'entregador/:id',component: EntregadorFormComponent},  
   {path: 'pedido/novo',component: PedidoFormComponent},
 
 

@@ -1,7 +1,7 @@
 
 import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
 import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
-import {FuncionarioFormComponent } from './funcionario/funcionario-form/funcionario-form.component';
+
 
 // Bem no início do arquivo app.module.ts
 import { NgxMaskModule, IConfig } from 'ngx-mask'
@@ -33,22 +33,22 @@ import { from } from 'rxjs';
 const routes: Routes = [
     //Rotas na Angular NUNCA comecam com /
     
-    {path: 'entregador/:id', component: EntregadorFormComponent},
-    {path: 'funcionario/:id', component: FuncionarioFormComponent},
+    {path: 'entregador/:id', component: EntregadorFormComponent},    
     {path: 'pedido/novo', component: PedidoFormComponent},
-    
+]
 
  @NgModule({
-  declarations: [
+    declarations:[
     AppComponent,
     MainToolbarComponent,
     MainMenuComponent,
     MainFooterComponent,    
     EntregadorFormComponent,   
     PedidoFormComponent,
-  ],
+  ],   
+
   imports: [
-    FuncionarioFormComponent,  
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
