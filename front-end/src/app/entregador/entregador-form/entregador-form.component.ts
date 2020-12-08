@@ -14,7 +14,7 @@ export class EntregadorFormComponent implements OnInit {
     title: string = 'Novo Entregador'
 
     entregador:  any = {} // Objeto vazio, nome da entidade no SINGULAR
-    
+    entregadores: any = []
     
 
   constructor(
@@ -32,9 +32,8 @@ export class EntregadorFormComponent implements OnInit {
               this.entregador = await this.entregadorSrv.obterUm(this.actRoute.snapshot.params['id'])
               // 2) Mudar o titulo da pagina
               this.title = 'Editando entregador'
-              // carregar as listagens das entidades relacionadas
-            
-            this.entregador = await this.entregadorSrv.listar()
+              // carregar as listagens das entidades relacionadas            
+              this.entregador = await this.entregadorSrv.listar()
             }          
                         
 

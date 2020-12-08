@@ -1,28 +1,24 @@
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { CursoService } from './../curso.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {​​ Location }​​ from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { EntregadorService } from '../entregador.service';
 
 @Component({
-  selector: 'app-curso-form',
-  templateUrl: './curso-form.component.html',
-  styleUrls: ['./curso-form.component.scss']
+  selector: 'app-entregador-form',
+  templateUrl: './entregador-form.component.html',
+  styleUrls: ['./entregador-form.component.scss']
 })
-export class CursoFormComponent implements OnInit {    
-    title: string = 'Novo Curso'
+export class EntregadorFormComponent implements OnInit {    
+    title: string = 'Novo Entregador'
 
-    curso:  any = {} // Objeto vazio, nome da entidade no SINGULAR
-    niveis: any = [
-        {valor:'Básico',descr: 'Básico'},
-        {valor:'Intermediário',descr: 'Intermediário'},
-        {valor:'Avançado',descr: 'Avançado'}
-    ]
+    entregador:  any = {} // Objeto vazio, nome da entidade no SINGULAR
+    displayedColumns : string[] = ['nome','cpf','data_nascimento','valor_entrega','telefone','editar','excluir']
     
 
   constructor(
-      private cursoSrv : CursoService,
+      private entregadorSrv : EntregadorService,
       private snackBar : MatSnackBar,
       private location : Location,
       private actRoute : ActivatedRoute
@@ -33,9 +29,9 @@ export class CursoFormComponent implements OnInit {
       if(this.actRoute.snapshot.params['id']){
           try{
               // 1) Trazer o registro do back-end para edição
-              this.curso = await this.cursoSrv.obterUm(this.actRoute.snapshot.params['id'])
+              this.entregador = await this.entregadorSrv.obterUm(this.actRoute.snapshot.params['id'])
               // 2) Mudar o titulo da pagina
-              this.title = 'Editando curso'
+              this.title = 'Editando entregador'
             }
             catch(erro){
                 console.log(erro)
@@ -48,13 +44,13 @@ export class CursoFormComponent implements OnInit {
     try{  
         if(form.valid){
         //1) Enviar os dados para o back-end para serem salvos
-        if(this.curso._id){
+        if(this.entregador._id){
             //_id existe, esse registro ja foi salvo anteriormente
             // no BD é o caso de atualização
-            await this.cursoSrv.atualizar(this.curso)            
+            await this.entregadorSrv.atualizar(this.entregador)            
         }
         else{
-            await this.cursoSrv.novo(this.curso)
+            await this.entregadorSrv.novo(this.entregador)
         }
         //2) Dar um feedback (mensagem) para o usuario
         this.snackBar.open('Dados salvos com sucesso', 'Entendi',

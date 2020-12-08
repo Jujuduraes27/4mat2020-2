@@ -14,7 +14,7 @@ export class PedidoFormComponent implements OnInit {
     title: string = 'Novo Pedido'
 
     pedido:  any = {} // Objeto vazio, nome da entidade no SINGULAR  
-    
+    pedidos: any =[]
 
   constructor(
       private pedidoSrv : PedidoService,

@@ -12,19 +12,7 @@
 <mat-label>Numero de CPF</mat-label>
 <input name="rg" [(ngModel)]="entregador.cpf" matInput required
     placeholder="Informe o numero de cpf" mask="000.000.000-0" [dropSpecialCharacters]="false">
-</mat-form-field>
-
-<mat-form-field appearance="fill">
-    <mat-label>Nível</mat-label>
-    <mat-select name="nivel" [(ngModel)]="curso.nivel" required>        
-      <!--mat-option value="Básico">Básico</mat-option>
-      <mat-option value="Intermediário">Intermediário</mat-option>
-      <mat-option value="Avançado">Avançado</mat-option-->
-      <mat-option *ngFor="let nivel of niveis" [value]="nivel.valor">
-      {{nivel.descr}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>  
+</mat-form-field> 
 
 <mat-form-field> 
 <mat-label>valor pela entrega</mat-label>
