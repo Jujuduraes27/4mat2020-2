@@ -8,17 +8,23 @@
     placeholder="Informe o nome do pedido">
 </mat-form-field>
 
-<mat-form-field> 
-<mat-label>Nome do Entregador</mat-label>
-<input name="nome" [(ngModel)]="pedido.nome_entregador" matInput required
-    placeholder="Informe o nome do entregador">
-</mat-form-field>
+<mat-form-field>
+    <mat-label>Nome do entregador</mat-label>    
+      <mat-select name="entregador" [(ngModel)]="pedido.entregador" required multiple>
+        <mat-option *ngFor="let entregador of entregador" [value]="entregador._id">
+          {{ entregador.nome }} 
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
 
-<mat-form-field> 
-<mat-label>Nome do Cliente</mat-label>
-<input name="nome" [(ngModel)]="pedido.nome_cliente" matInput required
-    placeholder="Informe o nome do cliente">
-</mat-form-field> 
+<mat-form-field>
+    <mat-label>Nome do cliente</mat-label>    
+      <mat-select name="cliente" [(ngModel)]="pedido.cliente" required multiple>
+        <mat-option *ngFor="let cliente of cliente" [value]="cliente._id">
+          {{ cliente.nome }} 
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
 
 <mat-form-field> 
 <mat-label>valor pela entrega</mat-label>

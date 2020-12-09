@@ -3,10 +3,16 @@
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 <!--mat-form-field appearance="fill"-->
 <mat-form-field> 
-<mat-label>Nome do Entregador</mat-label>
-<input name="nome" [(ngModel)]="entregador.nome" matInput required
-    placeholder="Informe o nome do entregador">
-</mat-form-field>
+
+
+<mat-form-field>
+    <mat-label>Nome do Entregador</mat-label>    
+      <mat-select name="entregador" [(ngModel)]="entregador.entregador" required multiple>
+        <mat-option *ngFor="let entregador of entregador" [value]="entregador._id">
+          {{ entregador.nome }} 
+        </mat-option>
+      </mat-select>
+  </mat-form-field> 
 
 <mat-form-field> 
 <mat-label>Numero de CPF</mat-label>
