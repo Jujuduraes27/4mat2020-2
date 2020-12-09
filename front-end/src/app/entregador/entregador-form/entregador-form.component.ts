@@ -75,7 +75,7 @@ export class EntregadorFormComponent implements OnInit {
       // form.dirty = formulario "sujo", não salvo (via código)
       // form.touched = o conteudo de algum campo foi alterado (via usuario)
       if(form.dirty && form.touched){
-          result = confirm('HÁ DADOS NÃO SALVOS. DESEJA REALMENTEVOLTAR')
+          result = confirm('HÁ DADOS NÃO SALVOS. DESEJA REALMENTE VOLTAR')
         }
       // Retorna á pagina anterior se resposta foi positiva ou se o formulario
       // estiver "limpo"
