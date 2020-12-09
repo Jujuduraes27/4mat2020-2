@@ -18,26 +18,12 @@
 <mat-label>Nome do Cliente</mat-label>
 <input name="nome" [(ngModel)]="pedido.nome" matInput required
     placeholder="Informe o nome do cliente">
-</mat-form-field>
-
-
-
-<mat-form-field appearance="fill">
-    <mat-label>Nível</mat-label>
-    <mat-select name="nivel" [(ngModel)]="curso.nivel" required>        
-      <!--mat-option value="Básico">Básico</mat-option>
-      <mat-option value="Intermediário">Intermediário</mat-option>
-      <mat-option value="Avançado">Avançado</mat-option-->
-      <mat-option *ngFor="let nivel of niveis" [value]="nivel.valor">
-      {{nivel.descr}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>  
+</mat-form-field> 
 
 <mat-form-field> 
-<mat-label>valor do curso</mat-label>
-<input name="valor_curso" [(ngModel)]="curso.valor_curso" matInput required
-    placeholder="Informe o valor do cruso" type="number">
+<mat-label>valor pela entrega</mat-label>
+<input name="valor_pedido" [(ngModel)]="pedido.valor_pedido" matInput required
+    placeholder="Informe o valor pelo pedido" type="number">
 </mat-form-field>
 
 <!-- No curso-form.component.ts, imediatamente ANTES do </form> -->

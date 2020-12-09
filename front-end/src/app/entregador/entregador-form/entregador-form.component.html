@@ -15,10 +15,18 @@
 </mat-form-field> 
 
 <mat-form-field> 
+<mat-label>Numero de telefone</mat-label>
+<input name="rg" [(ngModel)]="entregador.telefone" matInput required
+    placeholder="Informe o numero de telefone" mask="000.000.000" [dropSpecialCharacters]="false">
+</mat-form-field> 
+
+<mat-form-field> 
 <mat-label>valor pela entrega</mat-label>
 <input name="valor_entrega" [(ngModel)]="entrega.valor_entrega" matInput required
     placeholder="Informe o valor da entrega" type="number">
 </mat-form-field>
+
+
 
 <!-- No curso-form.component.ts, imediatamente ANTES do </form> -->
   <mat-toolbar class="form-buttons">
