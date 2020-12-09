@@ -1,4 +1,4 @@
-<h1>{{title}}</h1>
+<h1>{{Informaçoes do pedido}}</h1>
 
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 <!--mat-form-field appearance="fill"-->
@@ -16,7 +16,7 @@
 
 <mat-form-field> 
 <mat-label>Nome do Cliente</mat-label>
-<input name="nome" [(ngModel)]="pedido.nome" matInput required
+<input name="nome" [(ngModel)]="pedido.nome_cliente" matInput required
     placeholder="Informe o nome do cliente">
 </mat-form-field> 
 
