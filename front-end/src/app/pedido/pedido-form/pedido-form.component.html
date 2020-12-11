@@ -1,4 +1,4 @@
-<h1>{{Informaçoes do pedido}}</h1>
+<h1>Informaçoes do pedido</h1>
 
 <form class="std-form" #f="ngForm" (ngSubmit)="salvar(f)">
 <!--mat-form-field appearance="fill"-->
@@ -10,8 +10,8 @@
 
 <mat-form-field>
     <mat-label>Nome do entregador</mat-label>    
-      <mat-select name="entregador" [(ngModel)]="pedido.entregador" required multiple>
-        <mat-option *ngFor="let entregador of entregador" [value]="entregador._id">
+      <mat-select name="entregador" [(ngModel)]="pedido.entregador" required >
+        <mat-option *ngFor="let entregador of entregadores" [value]="entregador._id">
           {{ entregador.nome }} 
         </mat-option>
       </mat-select>
@@ -19,9 +19,18 @@
 
 <mat-form-field>
     <mat-label>Nome do cliente</mat-label>    
-      <mat-select name="cliente" [(ngModel)]="pedido.cliente" required multiple>
-        <mat-option *ngFor="let cliente of cliente" [value]="cliente._id">
+      <mat-select name="cliente" [(ngModel)]="pedido.cliente" required >
+        <mat-option *ngFor="let cliente of clientes" [value]="cliente._id">
           {{ cliente.nome }} 
+        </mat-option>
+      </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nome do produto</mat-label>    
+      <mat-select name="produto" [(ngModel)]="pedido.produto" required >
+        <mat-option *ngFor="let produto of produtos" [value]="produto._id">
+          {{ produto.produto}}  {{produto.valor}}
         </mat-option>
       </mat-select>
   </mat-form-field>
@@ -29,7 +38,7 @@
 <mat-form-field> 
 <mat-label>valor pela entrega</mat-label>
 <input name="valor_pedido" [(ngModel)]="pedido.valor_pedido" matInput required
-    placeholder="Informe o valor pelo pedido" type="number">
+    placeholder="Informe o valor pelo pedidos" type="number">
 </mat-form-field>
 
 <!-- No curso-form.component.ts, imediatamente ANTES do </form> -->

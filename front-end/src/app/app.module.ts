@@ -1,3 +1,4 @@
+import { EntregadorListComponent } from './entregador/entregador-list/entregador-list.component';
 
 import { PedidoFormComponent } from './pedido/pedido-form/pedido-form.component';
 import { EntregadorFormComponent } from './entregador/entregador-form/entregador-form.component';
@@ -28,6 +29,7 @@ import {​​ HttpClientModule }​​ from '@angular/common/http';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { from } from 'rxjs';
+import { PedidoListComponent } from './pedido/pedido-list/pedido-list.component';
 
 
 const routes: Routes = [
@@ -45,6 +47,8 @@ const routes: Routes = [
     MainFooterComponent,    
     EntregadorFormComponent,   
     PedidoFormComponent,
+    EntregadorListComponent,
+    PedidoListComponent
   ],   
 
   imports: [
